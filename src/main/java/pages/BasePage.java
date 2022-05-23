@@ -5,7 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
+import  java.util.concurrent.*;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -23,6 +23,7 @@ public class BasePage {
 	public WebDriver driver;
 	public Properties prop;
 	
+	@SuppressWarnings("deprecation")
 	public WebDriver init_driver(String browserName)
 	{
 		if(browserName.equalsIgnoreCase("Chrome"))
@@ -37,7 +38,7 @@ public class BasePage {
 		}
 		
 		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(10, java.util.concurrent.TimeUnit.SECONDS);
 		driver.manage().deleteAllCookies();
 		 driver.get("https://app.box.com/login");
 		return driver;

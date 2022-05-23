@@ -31,7 +31,7 @@ public class LoginPage extends BasePage {
 		return elementUtil.doGetLabel(headerTitle);
 	}
 	
-	public void doLogin(String username,String password )
+	public HomePage doLogin(String username,String password )
 	{
 		elementUtil.doWaitforPresenceOfElement(emailID);
 		elementUtil.doSendKeys(emailID, username);
@@ -39,6 +39,7 @@ public class LoginPage extends BasePage {
 		elementUtil.doWaitforPresenceOfElement(pwd);
 		elementUtil.doSendKeys(pwd, password);
 		elementUtil.doClick(logInBtn);
+		return new HomePage(driver);
 	}
 	
 	
