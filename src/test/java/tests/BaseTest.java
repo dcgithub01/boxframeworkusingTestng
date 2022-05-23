@@ -15,7 +15,7 @@ public class BaseTest {
 	public Properties prop;
 	public WebDriver driver;
 	public LoginPage lp;
-	@BeforeMethod
+	@BeforeTest
 	public LoginPage init_setup()
 	{
 		BasePage bp= new BasePage();
@@ -25,7 +25,7 @@ public class BaseTest {
 		return lp;
 	}
 	
-	@AfterMethod
+	@AfterTest
 	public void tear_down()
 	{
 		driver.quit();
