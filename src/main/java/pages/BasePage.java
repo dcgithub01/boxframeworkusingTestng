@@ -51,7 +51,7 @@ public class BasePage {
 		prop= new Properties();
 		FileInputStream ip;
 		try {
-			ip = new FileInputStream("../boxframeworkusingTestng/src/test/resources/config/config.properties");
+			ip = new FileInputStream("src/test/resources/config/config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
