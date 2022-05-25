@@ -22,6 +22,7 @@ public class LoginTest extends BaseTest {
 	@Test(priority=2)
 	public void verifyLogin()
 	{
+		System.out.println("testing");
 		lp.doLogin(prop.getProperty("username"), prop.getProperty("password"));
 	}
 
