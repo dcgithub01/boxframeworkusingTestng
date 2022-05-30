@@ -33,6 +33,8 @@ public class HomePage extends BasePage{
 	private By deleteItemPopUpHeading = By.xpath("//h2/span[text()='Delete Item']");
 	private By clickOKOnPopUp = By.cssSelector("button[data-resin-target='primarybutton']");
 	private By deleteConfirmationMsg= By.xpath("//span[contains(text(),'Item successfully moved to trash.')]");  
+	private By notesLink= By.cssSelector("a[data-resin-target='boxnotes']");
+
 	
 	public String getPageTitle()
 	{
@@ -73,4 +75,13 @@ public void deleteFolder() throws InterruptedException
 	elementUtil.doClick(closeConfirmationMsgIcon);
 	
 }
+public NotesPage goToNotesTab(int index )
+{
+	elementUtil.doClick(notesLink);
+	elementUtil.doGetChildWindow(index);
+	return new NotesPage(driver);
+	
+	
+}
+
 }
