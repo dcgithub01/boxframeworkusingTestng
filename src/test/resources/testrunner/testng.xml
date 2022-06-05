@@ -14,4 +14,9 @@
       <class name="tests.HomePageTest"/>
     </classes>
   </test> <!-- Test -->
+   <test thread-count="5" name="NotesTest" >
+    <classes>
+      <class name="tests.NotesPageTest"/>
+    </classes>
+  </test> <!-- Test -->
 </suite> <!-- Suite -->
