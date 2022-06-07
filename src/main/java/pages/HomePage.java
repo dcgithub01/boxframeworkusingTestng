@@ -62,7 +62,7 @@ elementUtil.doClick(closeConfirmationMsgIcon);
 
 }
 
-public void deleteFolder() throws InterruptedException
+public synchronized void deleteFolder() throws InterruptedException
 {  // this.foldername=foldername;
 	//elementUtil.doWaitForInvisibilityOfElement(confirmationMsg);
 	//elementUtil.doWaitforVisibilityOfElement(folderNameVerify);
@@ -70,7 +70,7 @@ public void deleteFolder() throws InterruptedException
 	elementUtil.doClick(selectRow);
 	elementUtil.doClick(clickTrash);
 	elementUtil.doGetLabel(deleteItemPopUpHeading);
-	elementUtil.doClick(clickOKOnPopUp);
+	elementUtil.doWaitforPresenceOfElement(clickOKOnPopUp).click();
 	elementUtil.doGetLabel(deleteConfirmationMsg);
 	elementUtil.doClick(closeConfirmationMsgIcon);
 	

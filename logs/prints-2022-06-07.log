@@ -1,0 +1,7 @@
+07:26:53.992 [main] DEBUG tests.LoginTest - debugging
+07:26:54.005 [AsyncHttpClient-1-4] TRACE io.netty.handler.codec.http.websocketx.WebSocket08FrameEncoder - Encoding WebSocket Frame opCode=8 length=26
+07:29:30.059 [main] INFO  tests.LoginTest - title verified successfully
+07:29:33.044 [main] INFO  tests.LoginTest - login successfully
+12:39:57.775 [TestNG-tests-1] INFO  tests.LoginTest - title verified successfully
+12:40:01.164 [TestNG-tests-1] INFO  tests.LoginTest - login successfully
+12:47:27.568 [TestNG-tests-1] INFO  tests.LoginTest - title verified successfully
