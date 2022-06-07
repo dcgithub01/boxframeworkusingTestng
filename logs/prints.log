@@ -1,0 +1,5 @@
+12:47:31.240 [TestNG-tests-1] INFO  tests.LoginTest - login successfully
+12:49:27.077 [TestNG-tests-1] INFO  tests.LoginTest - title verified successfully
+12:49:32.522 [TestNG-tests-1] INFO  tests.LoginTest - login successfully
+12:54:13.848 [TestNG-tests-1] INFO  tests.LoginTest - title verified successfully
+12:54:17.581 [TestNG-tests-1] INFO  tests.LoginTest - login successfully
