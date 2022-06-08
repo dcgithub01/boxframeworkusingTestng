@@ -98,7 +98,7 @@ public class BasePage {
 	}
 
 	public String getScreenshot() {
-		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		File src = ((TakesScreenshot) getdriver()).getScreenshotAs(OutputType.FILE);
 		String dest_path = System.getProperty("user.dir") + "Screenshots" + System.currentTimeMillis() + ".png";
 		File destination = new File(dest_path);
 		try {

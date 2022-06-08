@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 import utilities.ElementUtil;
 
 public class HomePage extends BasePage{
-	String foldername=null;
 	WebDriver driver;
 	ElementUtil elementUtil;
 
@@ -27,13 +26,13 @@ public class HomePage extends BasePage{
 	private By cancelBtnOnPopUP=By.cssSelector("button[data-resin-target='cancel']");
 	private By confirmationMsg= By.xpath("//span[contains(text(),'created successfully')]");
 	private By closeConfirmationMsgIcon = By.cssSelector("button.close-btn");
-	private By folderNameVerify= By.xpath("//div/a[text()='"+foldername+"']");
 	private By selectRow= By.xpath("//div[@class='ReactVirtualized__Grid__innerScrollContainer']/div[1]");
 	private By clickTrash = By.cssSelector("button[aria-label='Trash']");
 	private By deleteItemPopUpHeading = By.xpath("//h2/span[text()='Delete Item']");
 	private By clickOKOnPopUp = By.cssSelector("button[data-resin-target='primarybutton']");
 	private By deleteConfirmationMsg= By.xpath("//span[contains(text(),'Item successfully moved to trash.')]");  
 	private By notesLink= By.cssSelector("a[data-resin-target='boxnotes']");
+
 
 	
 	public String getPageTitle()
@@ -57,24 +56,23 @@ elementUtil.doSendKeys(folderName,nameOfFolder);
 elementUtil.doSendKeys(inviteEmail, emailInvite);
 elementUtil.doGetValueFromDropdownUsingSelect(permissionDropdown, PermissionValue);
 elementUtil.doClick(submitBtnOnPopUP);
-//elementUtil.doWaitforPresenceOfElement(confirmationMsg);
 elementUtil.doClick(closeConfirmationMsgIcon);
 
 }
 
-public synchronized void deleteFolder() throws InterruptedException
-{  // this.foldername=foldername;
-	//elementUtil.doWaitForInvisibilityOfElement(confirmationMsg);
-	//elementUtil.doWaitforVisibilityOfElement(folderNameVerify);
-	Thread.sleep(5000);
+public   void deleteRow() throws InterruptedException
+{  
+	elementUtil.doWaitforVisibilityOfElement(selectRow);
 	elementUtil.doClick(selectRow);
 	elementUtil.doClick(clickTrash);
 	elementUtil.doGetLabel(deleteItemPopUpHeading);
-	elementUtil.doWaitforPresenceOfElement(clickOKOnPopUp).click();
+	elementUtil.doWaitforVisibilityOfElement(clickOKOnPopUp);
+	elementUtil.doClick(clickOKOnPopUp);
+	elementUtil.doWaitforVisibilityOfElement(deleteConfirmationMsg);
 	elementUtil.doGetLabel(deleteConfirmationMsg);
 	elementUtil.doClick(closeConfirmationMsgIcon);
-	
-}
+	}
+
 public NotesPage goToNotesTab(int index )
 {
 	elementUtil.doClick(notesLink);

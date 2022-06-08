@@ -20,7 +20,7 @@ public class ElementUtil {
 
 	public ElementUtil(WebDriver driver) {
 		this.driver = driver;
-		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(12));
 	}
 
 	public WebElement doGetElement(By locator) {
@@ -107,6 +107,7 @@ public  Boolean doWaitforAttributeToBe(By locator,String attribute,String attrib
 		
 		String parentID= listOfhandles.get(0);
 		driver.switchTo().window(parentID);
+		//driver.switchTo().defaultContent();
 	}
 	
 	//************************* Frames *******************************

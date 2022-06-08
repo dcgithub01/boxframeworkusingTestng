@@ -39,7 +39,9 @@ public class NotesPage extends BasePage {
 
 	public void doEnterNote(String enterNoteDetails) {
 		elementUtil.doswitchToFrame(innerFrame);
+		elementUtil.doWaitforVisibilityOfElement(typeInArea);
 		elementUtil.doSendKeys(typeInArea, enterNoteDetails);
+		
 	}
 
 	public void doCreateBlankNote() throws InterruptedException {
@@ -55,5 +57,6 @@ public class NotesPage extends BasePage {
 
 	public void doSwitchToParent() {
 		elementUtil.doGetParentWindow();
+		
 	}
 }
