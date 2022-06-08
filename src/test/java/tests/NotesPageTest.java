@@ -10,6 +10,7 @@ import pages.NotesPage;
 public class NotesPageTest extends BaseTest {
 	public NotesPage np;
 	public HomePage hp;
+	String enterNotes="Testing";
 
 	@BeforeClass()
 	public void NotesPageSetup() {
@@ -35,14 +36,15 @@ public class NotesPageTest extends BaseTest {
 
 	@Test(priority = 4)
 	public void verifyEnterDetailsInNote() {
-		np.doEnterNote("testing");
+		np.doEnterNote(enterNotes);
 	}
 
 	@Test(priority = 5)
 	public void verifyDeleteNoteTest() {
 		np.doSwitchToParent();
+		
 		try {
-			hp.deleteFolder();
+			hp.deleteRow();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

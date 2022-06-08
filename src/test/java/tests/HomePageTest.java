@@ -8,6 +8,7 @@ import pages.HomePage;
 public class HomePageTest extends BaseTest {
 
 	public HomePage hp;
+	String foldrname1;
 	
 	@BeforeClass
 	public void homePageSetup()
@@ -25,12 +26,12 @@ public class HomePageTest extends BaseTest {
 	@Test(priority=2)
 	public void CreateFolderTest()
 	{
-		hp.createNewFolder("foldernamedc", "apex@gmail.com", "Editor");
+		 hp.createNewFolder("foldernamedc", "apex@gmail.com", "Editor");
 	}
 	
 	@Test(priority=3)
 	public void deleteFolder() throws InterruptedException
 	{
-		hp.deleteFolder();
+		hp.deleteRow();;
 	}
 }
