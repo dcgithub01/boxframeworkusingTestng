@@ -31,8 +31,17 @@ public class BasePage {
 	public static ThreadLocal<WebDriver> tl = new ThreadLocal<WebDriver>();
 
 	@SuppressWarnings("deprecation")
-	public WebDriver init_driver(String browserName) {
-
+	public WebDriver init_driver() {
+		String browserName=null;
+               if(prop.getProperty("jenkins").equals("true"))
+               {
+            	   browserName=System.getProperty("browser");
+            	   
+               }
+               else
+               {
+            	   browserName =prop.getProperty("browser");
+               }
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
 			// driver= new ChromeDriver();

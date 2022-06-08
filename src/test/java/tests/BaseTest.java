@@ -20,7 +20,7 @@ public class BaseTest {
 	{
 		BasePage bp= new BasePage();
 		prop=bp.init_prop();
-		driver=bp.init_driver(System.getProperty("browser"));
+		driver=bp.init_driver();
 		 lp= new LoginPage(driver);
 		return lp;
 	}
