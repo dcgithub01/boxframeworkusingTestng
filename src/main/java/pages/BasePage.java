@@ -32,6 +32,7 @@ public class BasePage {
 
 	@SuppressWarnings("deprecation")
 	public WebDriver init_driver(String browserName) {
+
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			WebDriverManager.chromedriver().setup();
 			// driver= new ChromeDriver();
