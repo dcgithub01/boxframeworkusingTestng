@@ -9,7 +9,7 @@
       <class name="tests.LoginTest"/>
     </classes>
   </test>
-   <test thread-count="5" name="NotesTest" >
+   <test thread-count="5" name="NotesTest" >	
     <classes>
       <class name="tests.NotesPageTest"/>
     </classes>
