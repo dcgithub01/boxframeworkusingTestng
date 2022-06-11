@@ -1,2 +1,5 @@
-09:09:09.754 [TestNG-tests-1] INFO  tests.LoginTest - login successfully
-09:32:11.973 [TestNG-tests-1] INFO  tests.LoginTest - login successfully
+19:14:40.844 [main] INFO  tests.LoginTest - login successfully
+19:17:10.642 [main] INFO  tests.LoginTest - login successfully
+19:19:08.412 [TestNG-tests-1] INFO  tests.LoginTest - login successfully
+19:21:09.388 [TestNG-tests-1] INFO  tests.LoginTest - login successfully
+19:36:50.384 [main] INFO  tests.LoginTest - login successfully

@@ -17,13 +17,15 @@ public class ElementUtil {
 
 	public WebDriver driver;
 	public WebDriverWait wait;
-
+    public JavaScriptUtil js;
 	public ElementUtil(WebDriver driver) {
 		this.driver = driver;
 		wait = new WebDriverWait(driver, Duration.ofSeconds(12));
+		js= new JavaScriptUtil(driver);
 	}
 
 	public WebElement doGetElement(By locator) {
+		js.flash(driver.findElement(locator));
 		return driver.findElement(locator);
 	}
 
@@ -50,6 +52,10 @@ public class ElementUtil {
 	{
 		return doGetElement(locator).isDisplayed();
 	}
+	public boolean isEnabled(By locator)
+	{
+		return doGetElement(locator).isEnabled();
+	}
 
 	// ****************************WebDriverWait Functions
 	// ***************************************************
@@ -64,6 +70,11 @@ public class ElementUtil {
 public  WebElement doWaitforVisibilityOfElement(By locator)
 {
 	return wait.until(ExpectedConditions.visibilityOf(doGetElement(locator)));
+}
+
+public  Boolean doWaitforInvisibilityOfElement(By locator)
+{
+	return wait.until(ExpectedConditions.invisibilityOf(doGetElement(locator)));
 }
 public  Boolean doWaitforAttributeToBe(By locator,String attribute,String attributeValue)
 {
