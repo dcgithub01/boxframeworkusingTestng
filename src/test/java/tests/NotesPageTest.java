@@ -42,12 +42,7 @@ public class NotesPageTest extends BaseTest {
 	@Test(priority = 5)
 	public void verifyDeleteNoteTest() {
 		np.doSwitchToParent();
-		
-		try {
-			hp.deleteRow();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+		hp.deleteRow();
+	
+}
 }

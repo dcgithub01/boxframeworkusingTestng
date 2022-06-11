@@ -32,6 +32,7 @@ public class HomePage extends BasePage{
 	private By clickOKOnPopUp = By.cssSelector("button[data-resin-target='primarybutton']");
 	private By deleteConfirmationMsg= By.xpath("//span[contains(text(),'Item successfully moved to trash.')]");  
 	private By notesLink= By.cssSelector("a[data-resin-target='boxnotes']");
+	private By trashLink= By.cssSelector("a[data-resin-target='trash']");
 
 
 	
@@ -60,7 +61,7 @@ elementUtil.doClick(closeConfirmationMsgIcon);
 
 }
 
-public   void deleteRow() throws InterruptedException
+public   void deleteRow()
 {  
 	elementUtil.doWaitforVisibilityOfElement(selectRow);
 	elementUtil.doClick(selectRow);
@@ -78,6 +79,15 @@ public NotesPage goToNotesTab(int index )
 	elementUtil.doClick(notesLink);
 	elementUtil.doGetChildWindow(index);
 	return new NotesPage(driver);
+	
+	
+}
+
+public TrashPage goToTrashTab()
+{
+	elementUtil.doClick(trashLink);
+	
+	return new TrashPage(driver);
 	
 	
 }
